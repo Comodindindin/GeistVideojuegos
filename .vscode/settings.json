@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Pruebaluz.sln"
+    "dotnet.defaultSolution": "GeistVideojuegos.sln"
 }
