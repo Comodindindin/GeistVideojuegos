@@ -9,22 +9,31 @@ public class Button : MonoBehaviour
     public Sprite pressedImage;
 
     public KeyCode keyToPress;
+
     void Start()
     {
+        // Obtiene el componente SpriteRenderer y valida su existencia
         theSR = GetComponent<SpriteRenderer>();
+        if (theSR == null)
+        {
+            Debug.LogError("SpriteRenderer no encontrado en " + gameObject.name);
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(keyToPress))
+        // Asegura que theSR no sea nulo antes de usarlo
+        if (theSR != null)
         {
-            theSR.sprite = pressedImage;
-        }
+            if (Input.GetKeyDown(keyToPress))
+            {
+                theSR.sprite = pressedImage;
+            }
 
-        if (Input.GetKeyUp(keyToPress))
-        {
-            theSR.sprite = defaultImage;
+            if (Input.GetKeyUp(keyToPress))
+            {
+                theSR.sprite = defaultImage;
+            }
         }
     }
 }

@@ -4,36 +4,29 @@ using UnityEngine;
 
 public class BeatScroll : MonoBehaviour
 {
-    public float beatTempo;
-    public bool hasStarted;
+    public float beatTempo; // Velocidad del desplazamiento
+    public bool hasStarted; // Controla si el juego ha iniciado
+
     void Start()
     {
-        beatTempo = beatTempo / 60f;
+        // Convierte el beatTempo a unidades por segundo
+        beatTempo /= 60f;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!hasStarted)
+        if (!hasStarted)
         {
-            if(Input.anyKeyDown)
+            // Comienza el juego si se presiona cualquier tecla
+            if (Input.anyKeyDown)
             {
                 hasStarted = true;
             }
-
-            else
-            {
-                transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
-            }
         }
-
-        if (hasStarted == true)
+        else
         {
-           if(!Input.anyKeyDown)
-            {
-                hasStarted = false;
-            }
-
+            // Mueve el objeto hacia abajo mientras el juego esté activo
+            transform.position -= new Vector3(0f, beatTempo * Time.deltaTime, 0f);
         }
     }
 }
