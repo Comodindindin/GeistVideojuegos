@@ -6,105 +6,96 @@ using UnityEngine.SceneManagement;
 
 public class dialogo2d : MonoBehaviour
 {
-    [SerializeField] private GameObject Exclamacion;   //signo de exclamacion//
+    [SerializeField] private GameObject Exclamacion;   // Signo de exclamación.
+    [SerializeField, TextArea(4, 6)] private string[] lineasDialogo; // Diálogos del juego.
+    [SerializeField] private GameObject panelDialogo; // Referencia al panel de diálogo.
+    [SerializeField] private TMP_Text dialogoTexto;   // Referencia al texto del diálogo.
 
-    [SerializeField, TextArea(4, 6)] private string[] lineasdialogo;     //variable para guardar los dialogos uwu // //Text area es para agrandar los espacios donde escribir//
-
-    [SerializeField] private GameObject paneldialogo; // la referencia para llamara al panel// 
-
-    [SerializeField] private TMP_Text dialogotext;  //la referencia al texto//
-
-
-
-
-    private float typingTime = 0.05f;   // variable del tiempo de las letritas// el tiempo de desplazamiento del texto, la "f" son segundos jaja
-
-    private bool isPlayerInRange; //si el jugador entra en el area//
-    private bool didDialogueStart;  //variable boolianda con un nombre "X"
-    private int lineIndex; // variable entera xd  el cual indica que dialogo muestra//
-
+    private float typingTime = 0.05f;   // Tiempo de escritura del texto.
+    private bool isPlayerInRange;       // Si el jugador está cerca.
+    private bool didDialogueStart;      // Si el diálogo ha comenzado.
+    private int lineIndex;              // Índice de la línea del diálogo actual.
 
     // Update is called once per frame
     void Update()
     {
-        if (isPlayerInRange && Input.GetButtonDown("Fire1"))   //fire1 es click izquierdo//
-
-
-            if (!didDialogueStart) // condicion adicional para que este dialogo aun no haya iniciado//
-
+        if (isPlayerInRange && Input.GetButtonDown("Fire1"))   // Al presionar el botón "Fire1" (click izquierdo)
+        {
+            if (!didDialogueStart)
             {
-                StartDialogue();  // es una funcion//
+                StartDialogue();  // Comienza el diálogo si no ha iniciado.
             }
-
-            else if (dialogotext.text == lineasdialogo[lineIndex])
+            else if (dialogoTexto.text == lineasDialogo[lineIndex])
             {
-                NextDialogueLine();
+                NextDialogueLine();  // Avanza a la siguiente línea si el texto se completó.
             }
+        }
 
+        // Permite saltar el diálogo con la tecla "H".
+        if (didDialogueStart && Input.GetKeyDown(KeyCode.H))
+        {
+            SkipDialogue();  // Salta el diálogo al presionar "H".
+        }
     }
 
     private void StartDialogue()
     {
-        didDialogueStart = true; // se inicio la conversacion//
-        paneldialogo.SetActive(true); //activamos el panel jeje //
-        Exclamacion.SetActive(false);   // desactivar la exclamacion//
-        lineIndex = 0;
-        StartCoroutine(ShowLine());   //escribelo xD, es para llamar la corrutina del dialogo//
+        didDialogueStart = true;              // Marca el inicio del diálogo.
+        panelDialogo.SetActive(true);         // Muestra el panel de diálogo.
+        Exclamacion.SetActive(false);         // Desactiva el signo de exclamación.
+        lineIndex = 0;                        // Resetea el índice de la línea.
+        StartCoroutine(ShowLine());           // Muestra la primera línea.
     }
 
-
-    private void NextDialogueLine()     // variable para cambiar de dialogo//
+    private void NextDialogueLine()
     {
-        lineIndex++;
-        if (lineIndex < lineasdialogo.Length)
+        lineIndex++;   // Avanza al siguiente índice de diálogo.
+        if (lineIndex < lineasDialogo.Length)
         {
-            StartCoroutine(ShowLine());
+            StartCoroutine(ShowLine());  // Muestra la siguiente línea.
         }
         else
         {
-            didDialogueStart = false;
-            paneldialogo.SetActive(false);
-            Exclamacion.SetActive(true);
-            SceneManager.LoadScene(3);
-
+            didDialogueStart = false;   // Termina el diálogo.
+            panelDialogo.SetActive(false);  // Oculta el panel de diálogo.
+            Exclamacion.SetActive(true);    // Muestra el signo de exclamación nuevamente.
         }
-
     }
+
     private IEnumerator ShowLine()
     {
-        dialogotext.text = string.Empty;   //todo esto es para que el dialogo tenga una animacion de recorrido como en Among Us//
-
-        foreach (char ch in lineasdialogo[lineIndex])
+        dialogoTexto.text = string.Empty;   // Limpia el texto del diálogo.
+        foreach (char ch in lineasDialogo[lineIndex])
         {
-            dialogotext.text += ch;
-            yield return new WaitForSeconds(0.05f); // aqui se acorto la variable y se uso "typingTime" // 
+            dialogoTexto.text += ch; // Agrega cada carácter al texto.
+            yield return new WaitForSeconds(typingTime);  // Espera un tiempo para el siguiente carácter.
         }
     }
 
-
-
-
-
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void SkipDialogue()
     {
-        if (collision.gameObject.name == ("Player2D"))
+        StopAllCoroutines();  // Detiene cualquier corrutina en ejecución.
+        dialogoTexto.text = lineasDialogo[lineIndex];  // Muestra el texto completo de la línea actual.
+        NextDialogueLine();  // Avanza a la siguiente línea inmediatamente.
+    }
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))  // Comprueba si el jugador entra en el área del trigger.
         {
             isPlayerInRange = true;
-            Exclamacion.SetActive(true);    //Activar signo de exclamacion//
-            Debug.Log("Funciona");           //mensaje para saber si sirve//
+            Exclamacion.SetActive(true);  // Muestra el signo de exclamación.
+            Debug.Log("Jugador dentro del área.");
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
-        if (collision.gameObject.name == ("Player2D"))
+        if (collision.gameObject.CompareTag("Player"))  // Comprueba si el jugador sale del área del trigger.
         {
             isPlayerInRange = false;
-            Exclamacion.SetActive(false);  //desactivar signo//
-            Debug.Log("Yanogenera");      //mensaje para saber si sirven//
+            Exclamacion.SetActive(false);  // Oculta el signo de exclamación.
+            Debug.Log("Jugador fuera del área.");
         }
     }
-
 }

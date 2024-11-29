@@ -6,31 +6,40 @@ using UnityEngine.SceneManagement;   //La madre esa que hace cambiar escenas uwu
 
 public class cerrarvideomenu3 : MonoBehaviour
 {
-    public VideoPlayer videos;
+    private VideoPlayer videos;       // Componente VideoPlayer
+    private int numeroEscena = 0;     // Índice de la escena a cargar (definido directamente en el código)
 
     private void Awake()
     {
+        // Obtener automáticamente el componente VideoPlayer
         videos = GetComponent<VideoPlayer>();
-        videos.Play();
-        videos.loopPointReached += CheckOver;
+
+        // Validar que el VideoPlayer esté configurado
+        if (videos != null)
+        {
+            videos.Play();
+            Debug.Log("Reproduciendo video...");
+            videos.loopPointReached += CheckOver; // Suscribirse al evento que detecta el fin del video
+        }
+        else
+        {
+            Debug.LogError("El componente VideoPlayer no se encontró en " + gameObject.name);
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // Método que se llama automáticamente cuando el video termina
     void CheckOver(VideoPlayer vp)
     {
-        SceneManager.LoadScene(0);    //El numero de la escena, pero no le puse el Void ya que debe ser automatico c://
+        Debug.Log("El video ha finalizado. Cambiando a la escena: " + numeroEscena);
+
+        // Validar que el índice de la escena sea válido
+        if (numeroEscena >= 0 && numeroEscena < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(numeroEscena); // Cargar la escena especificada
+        }
+        else
+        {
+            Debug.LogError("Índice de escena inválido: " + numeroEscena);
+        }
     }
-
-
 }
