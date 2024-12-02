@@ -35,12 +35,15 @@ public class dialogo : MonoBehaviour
         {
             SkipDialogue();  // Salta el diálogo al presionar "H".
         }
+<<<<<<< Updated upstream
 
         // Permite quitar el UI del diálogo con la tecla "X".
         if (didDialogueStart && Input.GetKeyDown(KeyCode.X))
         {
             ExitDialogue();  // Cierra el diálogo y oculta el UI al presionar "X".
         }
+=======
+>>>>>>> Stashed changes
     }
 
     private void StartDialogue()
@@ -83,6 +86,7 @@ public class dialogo : MonoBehaviour
         dialogoTexto.text = lineasDialogo[lineIndex];  // Muestra el texto completo de la línea actual.
         NextDialogueLine();  // Avanza a la siguiente línea inmediatamente.
     }
+<<<<<<< Updated upstream
 
     private void ExitDialogue()
     {
@@ -90,6 +94,8 @@ public class dialogo : MonoBehaviour
         panelDialogo.SetActive(false);  // Oculta el panel de diálogo.
         Exclamacion.SetActive(true);    // Muestra el signo de exclamación.
     }
+=======
+>>>>>>> Stashed changes
 
     private void OnTriggerEnter(Collider collision)
     {
