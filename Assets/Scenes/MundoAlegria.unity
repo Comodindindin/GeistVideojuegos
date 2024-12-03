@@ -1807,8 +1807,26 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 421066784}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[0]
+      value: "Miedo\n-\xA1Tristeza se fue huyendo al bosque!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[1]
+      value: 'Miedo
+
+        - Sigue este camino para encontrarla'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[2]
+      value: "Miedo\n-Buena suerte, peque\xF1o \"ente\"..."
       objectReference: {fileID: 0}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.data[0]
@@ -6419,8 +6437,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 421066784}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[0]
+      value: "Alegr\xEDa\n-Vi a Tristeza ir al bosque..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[1]
+      value: "Alegr\xEDa\n-No se ve\xEDa muy bien, \xBFpor qu\xE9 no vas por ella?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[2]
+      value: "Alegr\xEDa\n-Pero debes encontrar 3 l\xE1grimas escondidas en el bosque
+        para desbloquear el paso"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[3]
+      value: "Alegr\xEDa\n-Es algo que hace cuando se siente mal, es decir que casi
+        siempre..."
       objectReference: {fileID: 0}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.data[0]
@@ -9964,8 +10004,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 421066784}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[0]
+      value: 'Amor
+
+        -Tristeza es tan salvaje'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[1]
+      value: "Amor\n-Cari\xF1o, \xA1encuentrala por favor! Normalmente ella se deprime
+        y luego nos hornea, pero esta vez..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[2]
+      value: "Amor\n-\xA1AMOOOO SUS DELICIOSOS PANQUEQUES!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[3]
+      value: "Amor\n-Cari\xF1o, por favor encuentrala..."
       objectReference: {fileID: 0}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.data[0]
@@ -12322,8 +12385,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 421066784}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.size
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: lineasDialogo.Array.data[0]
+      value: "Soul\n-\xA1Que extra\xF1a botella!"
       objectReference: {fileID: 0}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: lineasdialogo.Array.data[0]
