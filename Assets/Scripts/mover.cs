@@ -41,17 +41,6 @@ public class mover : MonoBehaviour
                 //correr.Play();
             }
 
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

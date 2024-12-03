@@ -5,66 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscena : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // Cambiar a una escena específica por índice
+    public void CambiarEscena(int indiceEscena)
     {
-        
+        if (indiceEscena >= 0 && indiceEscena < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(indiceEscena);
+        }
+        else
+        {
+            Debug.LogError("Índice de escena inválido: " + indiceEscena);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Salir de la aplicación
+    public void Salir()
     {
-        
-    }
-
-    // Para cambiar escenas
-
-    public void Escena0()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void Escena1()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void Escena2()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-     public void Escena3()
-    {
-        SceneManager.LoadScene(3);
-    }
-
-     public void Escena15()
-    {
-        SceneManager.LoadScene(15);
-    }
-    public void Escena21()
-    {
-        SceneManager.LoadScene(21);
-    }
-
-
-    public void Escena20()
-    {
-        SceneManager.LoadScene(20);
-    }
-
-    public void Escena19()
-    {
-        SceneManager.LoadScene(19);
-    }
-
-
-    public void salir()
-    {
+        Debug.Log("Saliendo del juego...");
         Application.Quit();
     }
-
-
-
 }

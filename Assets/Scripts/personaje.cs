@@ -6,6 +6,7 @@ public class personaje: MonoBehaviour
 {
     Animator anime;
     public AudioSource correr;
+    public float velocidad = 5f;  // Velocidad del personaje, puedes ajustarla según lo necesites
 
     void Start()
     {
@@ -15,72 +16,64 @@ public class personaje: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isMoving = false;  // Variable para verificar si hay movimiento
+
+        // Movimiento hacia la derecha
+        if (Input.GetKey(KeyCode.D))
         {
-            if (Input.GetKey(KeyCode.D))
-            {
-              //transform.Translate(5f * Time.deltaTime, 0, 0);
-                anime.SetBool("Derecha", true);
-                correr.Play();
-            }
-            else
-            {
-                anime.SetBool("Derecha", false);
-                //correr.Pause();
-            }
-           
-            if (Input.GetKey(KeyCode.A))
-            {
-              //transform.Translate(-5f * Time.deltaTime, 0, 0);
-                anime.SetBool("Izquierda", true);
-                correr.Play();
-            }
-            else
-            {
-                anime.SetBool("Izquierda", false);
-                correr.Pause();
-            }
-           
-
-            if (Input.GetKey(KeyCode.W))
-            {
-                //ransform.Translate(-5f * Time.deltaTime, 0, 0);
-                anime.SetBool("Atras", true);
-                correr.Play();
-            }
-            else
-            {
-             anime.SetBool("Atras", false);
-                correr.Pause();
-
-            }
-
-            if (Input.GetKey(KeyCode.S))
-            {
-                //ransform.Translate(-5f * Time.deltaTime, 0, 0);
-                anime.SetBool("Enfrente", true);
-                correr.Play();
-            }
-            else
-            {
-             anime.SetBool("Enfrente", false);
-                //correr.Pause();
-            }
-
-
-
-
-
+            transform.Translate(velocidad * Time.deltaTime, 0, 0);  // Moverse a la derecha
+            anime.SetBool("Derecha", true);
+            correr.Play();
+            isMoving = true;
+        }
+        else
+        {
+            anime.SetBool("Derecha", false);
         }
 
+        // Movimiento hacia la izquierda
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Translate(-velocidad * Time.deltaTime, 0, 0);  // Moverse a la izquierda
+            anime.SetBool("Izquierda", true);
+            correr.Play();
+            isMoving = true;
+        }
+        else
+        {
+            anime.SetBool("Izquierda", false);
+        }
 
+        // Movimiento hacia atrás
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Translate(0, 0, velocidad * Time.deltaTime);  // Moverse hacia atrás
+            anime.SetBool("Atras", true);
+            correr.Play();
+            isMoving = true;
+        }
+        else
+        {
+            anime.SetBool("Atras", false);
+        }
 
+        // Movimiento hacia adelante
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Translate(0, 0, -velocidad * Time.deltaTime);  // Moverse hacia adelante
+            anime.SetBool("Enfrente", true);
+            correr.Play();
+            isMoving = true;
+        }
+        else
+        {
+            anime.SetBool("Enfrente", false);
+        }
 
+        // Si no se está moviendo, pausamos la animación de correr
+        if (!isMoving)
+        {
+            correr.Pause();  // Pausar el sonido de correr
+        }
     }
-
-
-
-
-
-
-
 }
