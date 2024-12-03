@@ -15,39 +15,63 @@ public class dialogo : MonoBehaviour
     private bool didDialogueStart;      // Si el diálogo ha comenzado.
     private int lineIndex;              // Índice de la línea del diálogo actual.
 
-    // Update is called once per frame
+    void Start()
+    {
+        // Validar que todas las referencias estén asignadas
+        if (Exclamacion == null)
+        {
+            Debug.LogError("El campo 'Exclamacion' no está asignado en el Inspector.");
+        }
+        if (panelDialogo == null)
+        {
+            Debug.LogError("El campo 'panelDialogo' no está asignado en el Inspector.");
+        }
+        if (dialogoTexto == null)
+        {
+            Debug.LogError("El campo 'dialogoTexto' no está asignado en el Inspector.");
+        }
+    }
+
     void Update()
     {
-        if (isPlayerInRange && Input.GetButtonDown("Fire1"))   // Al presionar el botón "Fire1" (click izquierdo)
+        // Mostrar diálogo al hacer clic izquierdo (Fire1).
+        if (isPlayerInRange && Input.GetButtonDown("Fire1"))
         {
             if (!didDialogueStart)
             {
+                Debug.Log("Iniciando diálogo...");
                 StartDialogue();  // Comienza el diálogo si no ha iniciado.
             }
             else if (dialogoTexto.text == lineasDialogo[lineIndex])
             {
+                Debug.Log("Mostrando siguiente línea del diálogo...");
                 NextDialogueLine();  // Avanza a la siguiente línea si el texto se completó.
             }
         }
 
-        // Permite saltar el diálogo con la tecla "H".
+        // Saltar el diálogo con la tecla "H".
         if (didDialogueStart && Input.GetKeyDown(KeyCode.H))
         {
+            Debug.Log("Saltando diálogo...");
             SkipDialogue();  // Salta el diálogo al presionar "H".
         }
-<<<<<<< Updated upstream
 
-        // Permite quitar el UI del diálogo con la tecla "X".
+        // Ocultar el diálogo con la tecla "X".
         if (didDialogueStart && Input.GetKeyDown(KeyCode.X))
         {
+            Debug.Log("Cerrando diálogo...");
             ExitDialogue();  // Cierra el diálogo y oculta el UI al presionar "X".
         }
-=======
->>>>>>> Stashed changes
     }
 
     private void StartDialogue()
     {
+        if (panelDialogo == null || dialogoTexto == null || lineasDialogo == null)
+        {
+            Debug.LogError("No se puede iniciar el diálogo: falta alguna referencia en el Inspector.");
+            return;
+        }
+
         didDialogueStart = true;              // Marca el inicio del diálogo.
         panelDialogo.SetActive(true);         // Muestra el panel de diálogo.
         Exclamacion.SetActive(false);         // Desactiva el signo de exclamación.
@@ -64,9 +88,7 @@ public class dialogo : MonoBehaviour
         }
         else
         {
-            didDialogueStart = false;   // Termina el diálogo.
-            panelDialogo.SetActive(false);  // Oculta el panel de diálogo.
-            Exclamacion.SetActive(true);    // Muestra el signo de exclamación nuevamente.
+            ExitDialogue();  // Finaliza el diálogo si no hay más líneas.
         }
     }
 
@@ -86,7 +108,6 @@ public class dialogo : MonoBehaviour
         dialogoTexto.text = lineasDialogo[lineIndex];  // Muestra el texto completo de la línea actual.
         NextDialogueLine();  // Avanza a la siguiente línea inmediatamente.
     }
-<<<<<<< Updated upstream
 
     private void ExitDialogue()
     {
@@ -94,8 +115,6 @@ public class dialogo : MonoBehaviour
         panelDialogo.SetActive(false);  // Oculta el panel de diálogo.
         Exclamacion.SetActive(true);    // Muestra el signo de exclamación.
     }
-=======
->>>>>>> Stashed changes
 
     private void OnTriggerEnter(Collider collision)
     {
