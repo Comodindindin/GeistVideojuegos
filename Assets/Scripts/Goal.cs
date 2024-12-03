@@ -19,7 +19,6 @@ public class Goal : MonoBehaviour
      {
      if (inventario.cantidad == 3)
      {
-    
        SceneManager.LoadScene(7);
      }
          
