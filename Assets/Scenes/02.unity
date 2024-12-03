@@ -416,7 +416,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6aa65eaeb733c4693e756d83a3e108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videos: {fileID: 441130429}
+  videoPlayer: {fileID: 0}
+  numeroEscena: 0
 --- !u!1 &567702945
 GameObject:
   m_ObjectHideFlags: 0
@@ -910,7 +911,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1775296147}
         m_TargetAssemblyTypeName: CambioEscena, Assembly-CSharp
-        m_MethodName: salir
+        m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
