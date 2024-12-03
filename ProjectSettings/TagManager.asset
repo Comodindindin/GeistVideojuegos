@@ -3,20 +3,21 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Alegria
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Arbolenfrente
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Arbolmedio
+  - Sol
+  - Faro
+  - Arbolfondo
+  - Arbolsemimedio
+  - Pasto
   - 
   - 
   - 
