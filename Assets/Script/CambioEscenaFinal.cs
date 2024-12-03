@@ -10,6 +10,7 @@ public class CambioEscenaFinal : MonoBehaviour
         // Verifica si el objeto que entra en el collider es el jugador
         if (other.CompareTag("Player"))
         {
+            Debug.Log("toco player");
             // Cambia a la escena especificada
             SceneManager.LoadScene(sceneName);
         }

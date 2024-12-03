@@ -28,7 +28,12 @@ public class CambioComic : MonoBehaviour
 		SceneManager.LoadScene(9);
 	}
 
-	public void Menu()
+    public void escenaFinal()
+    {
+        SceneManager.LoadScene(10);
+    }
+
+    public void Menu()
 	{
 		SceneManager.LoadScene(1);
 	}
