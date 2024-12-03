@@ -42,6 +42,7 @@ public class dialogoalegriacaminar : MonoBehaviour
 
     private void StartDialogue()
     {
+        Debug.Log("Dialogo corriendo");
         didDialogueStart = true;              // Marca el inicio del diálogo.
         paneldialogo.SetActive(true);         // Muestra el panel de diálogo.
         Exclamacion.SetActive(false);         // Desactiva el signo de exclamación.
@@ -87,7 +88,7 @@ public class dialogoalegriacaminar : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player2D")  // Verifica si el jugador entra en el área del trigger.
+        if (collision.gameObject.name == "Soul")  // Verifica si el jugador entra en el área del trigger.
         {
             isPlayerInRange = true;
             Exclamacion.SetActive(true);  // Muestra el signo de exclamación.
@@ -97,7 +98,7 @@ public class dialogoalegriacaminar : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player2D")  // Verifica si el jugador sale del área del trigger.
+        if (collision.gameObject.name == "Soul")  // Verifica si el jugador sale del área del trigger.
         {
             isPlayerInRange = false;
             Exclamacion.SetActive(false);  // Oculta el signo de exclamación.

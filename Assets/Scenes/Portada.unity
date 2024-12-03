@@ -708,7 +708,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1021151148}
         m_TargetAssemblyTypeName: CambioEscena, Assembly-CSharp
-        m_MethodName: salir
+        m_MethodName: Salir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1795,6 +1795,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 99810640}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: dialogoTexto
+      value: 
+      objectReference: {fileID: 99810640}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 421066784}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: paneldialogo
       value: 
       objectReference: {fileID: 421066784}
@@ -6399,6 +6407,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 99810640}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: dialogoTexto
+      value: 
+      objectReference: {fileID: 99810640}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 421066784}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: paneldialogo
       value: 
       objectReference: {fileID: 421066784}
@@ -9936,6 +9952,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 99810640}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: dialogoTexto
+      value: 
+      objectReference: {fileID: 99810640}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 421066784}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: paneldialogo
       value: 
       objectReference: {fileID: 421066784}
@@ -12286,6 +12310,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 99810640}
     - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: dialogoTexto
+      value: 
+      objectReference: {fileID: 99810640}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
+      propertyPath: panelDialogo
+      value: 
+      objectReference: {fileID: 421066784}
+    - target: {fileID: 4472889736109809730, guid: b3e95fc1e90f4c14e9377bbbd019d3c8, type: 3}
       propertyPath: paneldialogo
       value: 
       objectReference: {fileID: 421066784}
@@ -14410,7 +14442,7 @@ GameObject:
   - component: {fileID: 1481681812}
   - component: {fileID: 1481681813}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Soul
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14445,6 +14477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correr: {fileID: 1033576577}
+  velocidad: 5
 --- !u!95 &1481681806
 Animator:
   serializedVersion: 5
