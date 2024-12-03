@@ -1340,6 +1340,8 @@ GameObject:
   m_Component:
   - component: {fileID: 928622056}
   - component: {fileID: 928622055}
+  - component: {fileID: 928622058}
+  - component: {fileID: 928622057}
   m_Layer: 0
   m_Name: cielofuria (1)
   m_TagString: Untagged
@@ -1414,6 +1416,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &928622057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928622054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6454fdd79f1569045825208f03fbc839, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Portada
+--- !u!65 &928622058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928622054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.839999, y: 7.7899995, z: 1.0609231}
+  m_Center: {x: 0, y: 0, z: -0.6304616}
 --- !u!1 &933089511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,9 +1546,10 @@ GameObject:
   - component: {fileID: 990269858}
   - component: {fileID: 990269857}
   - component: {fileID: 990269860}
+  - component: {fileID: 990269861}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1612,6 +1649,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!136 &990269861
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990269856}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 10.5032015
+  m_Direction: 1
+  m_Center: {x: 0, y: -4.7516007, z: 0}
 --- !u!1001 &1007371330
 PrefabInstance:
   m_ObjectHideFlags: 0
