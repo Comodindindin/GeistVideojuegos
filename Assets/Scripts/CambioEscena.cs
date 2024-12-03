@@ -8,13 +8,22 @@ public class CambioEscena : MonoBehaviour
     // Cambiar a una escena específica por índice
     public void CambiarEscena(int indiceEscena)
     {
-        if (indiceEscena >= 0 && indiceEscena < SceneManager.sceneCountInBuildSettings)
+        // Obtiene el índice de la escena actual
+        int indiceEscenaActual = SceneManager.GetActiveScene().buildIndex;
+
+        // Calcula el índice de la siguiente escena
+        int indiceSiguienteEscena = indiceEscenaActual + 1;
+
+        // Verifica si la siguiente escena está dentro del rango del Build Settings
+        if (indiceSiguienteEscena < SceneManager.sceneCountInBuildSettings)
         {
-            SceneManager.LoadScene(indiceEscena);
+            // Cambia a la siguiente escena
+            SceneManager.LoadScene(indiceSiguienteEscena);
         }
         else
         {
-            Debug.LogError("Índice de escena inválido: " + indiceEscena);
+            // Si no hay más escenas, muestra un mensaje en consola
+            Debug.LogError("No hay más escenas en el Build Settings.");
         }
     }
 

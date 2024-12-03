@@ -417,7 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 0}
-  numeroEscena: 0
+  numeroEscena: 3
 --- !u!1 &567702945
 GameObject:
   m_ObjectHideFlags: 0
